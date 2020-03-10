@@ -1,3 +1,4 @@
+import { PhotosService } from 'src/app/services/photos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./albums.component.css']
 })
 export class AlbumsComponent implements OnInit {
-
-  constructor() { }
+  albums;
+  constructor(
+    private photosService: PhotosService,
+  ) { }
 
   ngOnInit(): void {
+    this.albums = this.photosService.getAlbums();
   }
 
 }

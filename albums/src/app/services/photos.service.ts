@@ -13,4 +13,7 @@ export class PhotosService {
     getAlbums() {
       return this.http.get('https://jsonplaceholder.typicode.com/albums');
     }
+    getPhotos(albumId) {
+      return this.http.get('https://jsonplaceholder.typicode.com/photos?albumId=' + albumId);
+    }
 }
